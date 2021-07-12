@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_everything_2/demo_info.dart';
+import 'package:flutter_demo_everything_2/steam_card_image/steam_card_image_demo_info.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,53 +14,79 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Main(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
+class Main extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainState createState() => _MainState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class _MainState extends State<Main> {
+  late List<DemoInfo> listDemo;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  @override
+  void initState() {
+    super.initState();
+    listDemo = [
+      steamCardImageDemoInfo,
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: listDemo
+              .map(
+                (demo) => _demoButton(demo),
+              )
+              .toList(),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+    );
+  }
+
+  Widget _demoButton(DemoInfo demo) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: () {
+            _openDemo(
+              route: MaterialPageRoute(
+                builder: (ctx) => demo.demo!,
+              ),
+            );
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(
+                color: Colors.lightBlueAccent,
+                width: 2,
+              ),
+            ),
+            padding: const EdgeInsets.all(8),
+            child: Text(
+              demo.name,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+        ),
       ),
     );
+  }
+
+  void _openDemo({Route<dynamic>? route}) {
+    Navigator.push(context, route!);
   }
 }
