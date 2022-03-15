@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo_everything_2/animation/animation_info.dart';
 import 'package:flutter_demo_everything_2/demo_info.dart';
 import 'package:flutter_demo_everything_2/steam_card_image/steam_card_image_demo_info.dart';
 
+import 'custom_carousel/custom_carousel_demo_info.dart';
+import 'expansion_tree_demo/expansion_tree_demo_info.dart';
 import 'flowable_widget_demo/flowable_widget_demo_info.dart';
-import 'hls_player/hls_player_demo_info.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,8 +37,10 @@ class _MainState extends State<Main> {
     super.initState();
     listDemo = [
       steamCardImageDemoInfo,
-      hlsPlayerDemoInfo,
       flowableWidgetDemoInfo,
+      expansionTreeDemoInfo,
+      customCarouselDemo,
+      animationInfo,
     ];
   }
 
