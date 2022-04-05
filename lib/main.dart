@@ -6,6 +6,7 @@ import 'package:flutter_demo_everything_2/steam_card_image/steam_card_image_demo
 import 'custom_carousel/custom_carousel_demo_info.dart';
 import 'expansion_tree_demo/expansion_tree_demo_info.dart';
 import 'flowable_widget_demo/flowable_widget_demo_info.dart';
+import 'hook/hook_info.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,6 +42,7 @@ class _MainState extends State<Main> {
       expansionTreeDemoInfo,
       customCarouselDemo,
       animationInfo,
+      hookDemoInfo,
     ];
   }
 
