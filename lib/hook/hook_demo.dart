@@ -13,6 +13,10 @@ class HookDemo extends HookWidget {
 
     final heyText = useFuture(hey());
 
+    final waveStreamCtr = useStreamController();
+
+    final waveStream = useStream(waveStreamCtr.stream);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Hook demo'),
@@ -40,6 +44,7 @@ class HookDemo extends HookWidget {
                   },
                   child: Text('${_counter.value}')),
               Text('${heyText.data}'),
+              Text('${waveStream.data}'),
             ],
           ),
         ),
@@ -49,6 +54,7 @@ class HookDemo extends HookWidget {
         onPressed: () {
           _animation.forward(from: 0);
           _counter.value++;
+          waveStreamCtr.add('wave${'e' * _counter.value}');
         },
       ),
     );
