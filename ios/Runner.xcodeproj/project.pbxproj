@@ -68,7 +68,6 @@
 				65B7A4CF73454B57EC84ED66 /* Pods-Runner.release.xcconfig */,
 				A4DB4C11C67B677FC2180A5F /* Pods-Runner.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -354,6 +353,7 @@
 		};
 		97C147031CF9000F007C117D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FD3AD2EE62CCAF2433ED5D1 /* Pods-Runner.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
