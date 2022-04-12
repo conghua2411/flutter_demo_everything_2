@@ -54,14 +54,6 @@ class _CircleCloseState extends State<CircleClose>
     setState(() {});
   }
 
-  void _aniStatusListener(AnimationStatus status) {
-    if (status == AnimationStatus.completed) {
-      _animationController.reverse();
-    } else if (status == AnimationStatus.dismissed) {
-      _animationController.forward();
-    }
-  }
-
   @override
   void dispose() {
     _animation.removeListener(_aniListener);

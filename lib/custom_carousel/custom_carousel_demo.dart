@@ -132,27 +132,27 @@ class _CustomCarouselDemoState extends State<CustomCarouselDemo> {
     );
   }
 
-  Widget _customRow() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          10,
-          (index) => Container(
-            width: 100,
-            height: 100,
-            // margin: EdgeInsets.only(right: 16.0 * (currentPage - index).abs()),
-            child: Padding(
-              padding: EdgeInsets.all(8.0 * (currentPage - index).abs()),
-              child: Container(
-                color: Colors.redAccent,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+  // Widget _customRow() {
+  //   return SingleChildScrollView(
+  //     scrollDirection: Axis.horizontal,
+  //     child: Row(
+  //       children: List.generate(
+  //         10,
+  //         (index) => Container(
+  //           width: 100,
+  //           height: 100,
+  //           // margin: EdgeInsets.only(right: 16.0 * (currentPage - index).abs()),
+  //           child: Padding(
+  //             padding: EdgeInsets.all(8.0 * (currentPage - index).abs()),
+  //             child: Container(
+  //               color: Colors.redAccent,
+  //             ),
+  //           ),
+  //         ),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
 
 ////////////////////////////////

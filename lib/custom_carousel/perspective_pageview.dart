@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:provider/provider.dart';
 
 enum PVAspectRatio {
@@ -28,13 +27,10 @@ class _PerspectivePageViewState extends State<PerspectivePageView> {
     switch(widget.aspectRatio){
       case PVAspectRatio.ONE_ONE:
         return [1.0,1.6];
-        break;
       case PVAspectRatio.SIXTEEN_NINE:
         return [16/9,1.1];
-        break;
       default:
         return [1.0,1.6];
-        break;
     }
   }
 
