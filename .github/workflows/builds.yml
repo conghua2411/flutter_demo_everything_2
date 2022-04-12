@@ -1,5 +1,4 @@
 name: Builds
-
 on:
   push:
     branches:
@@ -15,19 +14,17 @@ jobs:
       matrix:
         target: ["apk --debug", "ios --no-codesign", macos, web]
     steps:
-      # Set up Flutter
-      - name: Clone Flutter repository stable
-        uses: subosito/flutter-action@v2
+      # Set up Flutter.
+      - name: Clone Flutter repository with stable channel
+        uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8
         with:
-          channel: 'stable'
+          channel: stable
       - run: flutter config --enable-macos-desktop
       - run: flutter doctor -v
 
-      # Checkout flutter demo code
+      # Checkout repository code and get packages.
       - name: Checkout repository code
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v2
       - run: flutter pub get -v
 
-      - name: Build
-        run: flutter build ${{ matrix.target }}
+      - run: flutter build ${{ matrix.target }}
