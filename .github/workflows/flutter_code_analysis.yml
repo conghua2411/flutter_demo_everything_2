@@ -1,0 +1,37 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Flutter dart analysis
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Flutter dart analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout and get packages.
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+
+      # Set up Flutter.
+      - name: Clone Flutter repository with master channel
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - run: flutter config --enable-macos-desktop
+
+      - run: flutter doctor -v
+
+      - name: Install dependencies
+        run: flutter pub get -v
+
+      - name: Analyze project source
+        run: flutter analyze
