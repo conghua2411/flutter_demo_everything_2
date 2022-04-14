@@ -32,4 +32,8 @@ jobs:
         uses: actions/checkout@v2
       - run: flutter pub get -v
 
+      - name: pod install
+        working-directory: ./ios
+        run: pod install
+
       - run: flutter build ${{ matrix.target }}
