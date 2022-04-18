@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_everything_2/animation/animation_info.dart';
 import 'package:flutter_demo_everything_2/demo_info.dart';
+import 'package:flutter_demo_everything_2/flutter_bloc_demo/flutter_bloc_demo_info.dart';
 import 'package:flutter_demo_everything_2/steam_card_image/steam_card_image_demo_info.dart';
 
 import 'custom_carousel/custom_carousel_demo_info.dart';
@@ -43,6 +44,7 @@ class _MainState extends State<Main> {
       customCarouselDemo,
       animationInfo,
       hookDemoInfo,
+      flutterBlocDemoInfo,
     ];
   }
 
