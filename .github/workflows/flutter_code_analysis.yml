@@ -33,5 +33,7 @@ jobs:
       - name: Install dependencies
         run: flutter pub get -v
 
+      - run: flutter pub run build_runner build
+
       - name: Analyze project source
         run: flutter analyze
