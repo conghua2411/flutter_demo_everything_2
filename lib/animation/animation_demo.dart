@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_everything_2/demo_info.dart';
 
-import 'demos/circle_close/ani_circle_close_info.dart';
+import 'ani_demos.dart';
 
 class AnimationDemo extends StatefulWidget {
   @override
@@ -14,8 +14,7 @@ class _AnimationDemoState extends State<AnimationDemo> {
   @override
   void initState() {
     super.initState();
-
-    anims = [aniCircleCloseDemoInfo];
+    anims = aniDemos;
   }
 
   @override

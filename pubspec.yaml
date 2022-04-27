@@ -37,6 +37,11 @@ dependencies:
   freezed_annotation: ^1.1.0
   json_annotation: ^4.4.0
 
+  flutter_compass: ^0.7.0
+  permission_handler: ^9.2.0
+
+  device_info_plus: ^3.2.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
