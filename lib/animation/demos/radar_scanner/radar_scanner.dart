@@ -348,8 +348,6 @@ class _RadarScannerWidgetState extends State<RadarScannerWidget>
     PosRadar pos,
     PosRadar userPos,
   ) {
-    double distance = userPos.calDistance(pos);
-
     double vectorX = (userPos.lat - pos.lat);
     double vectorY = (userPos.lng - pos.lng);
 
