@@ -1,3 +1,5 @@
+import 'package:flutter_demo_everything_2/sceen_life_cycle/screen_life_cycle_demo_info.dart';
+
 import 'animation/animation_info.dart';
 import 'custom_carousel/custom_carousel_demo_info.dart';
 import 'dartz_demo/dartz_demo_info.dart';
@@ -18,4 +20,5 @@ var demos = [
   flutterBlocDemoInfo,
   dartzDemoInfo,
   freezedDemoInfo,
+  screenLifeCycleDemoInfo,
 ];

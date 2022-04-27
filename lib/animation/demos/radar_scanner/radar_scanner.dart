@@ -296,15 +296,15 @@ class _RadarScannerWidgetState extends State<RadarScannerWidget>
   }
 
   Future<bool> _fetchPermissionStatus() {
-    return Future.value(true);
+    // return Future.value(true);
 
-    // return Permission.location.status.then((value) {
-    //   if (!value.isGranted) {
-    //     return _requestPermission();
-    //   }
-    //
-    //   return value.isGranted;
-    // });
+    return Permission.location.status.then((value) {
+      if (!value.isGranted) {
+        return _requestPermission();
+      }
+
+      return value.isGranted;
+    });
   }
 
   Future<bool> _requestPermission() {
@@ -344,17 +344,11 @@ class _RadarScannerWidgetState extends State<RadarScannerWidget>
     );
   }
 
-  double _vectorDistance(double x, double y) {
-    return math.sqrt(x * x + y * y);
-  }
-
   Widget positionedPosRadar(
     PosRadar pos,
     PosRadar userPos,
   ) {
     double distance = userPos.calDistance(pos);
-
-    double distanceRatio = distance / maxDistance;
 
     double vectorX = (userPos.lat - pos.lat);
     double vectorY = (userPos.lng - pos.lng);
