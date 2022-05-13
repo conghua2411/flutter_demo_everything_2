@@ -15,6 +15,7 @@ jobs:
         uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8
         with:
           channel: stable
+          flutter-version: '2.10.5'
 
 
       # Checkout repository code and get packages.
