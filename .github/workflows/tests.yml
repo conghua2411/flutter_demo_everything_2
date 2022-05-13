@@ -1,0 +1,36 @@
+name: Flutter_Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone Flutter repository with stable channel
+        uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8
+        with:
+          channel: stable
+          flutter-version: '2.10.5'
+
+
+      # Checkout repository code and get packages.
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+      - run: flutter pub get -v
+
+      - run: flutter pub run build_runner build
+
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --coverage
+
+      - uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage/lcov.info
