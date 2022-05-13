@@ -1,6 +1,10 @@
 *.freezed.dart
 *.g.dart
 
+# Coverage
+coverage.json
+coverage/*
+
 # Miscellaneous
 *.class
 *.log
