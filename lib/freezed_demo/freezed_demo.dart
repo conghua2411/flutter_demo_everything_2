@@ -32,28 +32,47 @@ class _FreezedDemoState extends State<FreezedDemo> {
       appBar: AppBar(
         title: Text('Freezed demo'),
       ),
-      body: StreamBuilder<List<Post>>(
-          initialData: [],
-          stream: bloc.listenListPost(),
-          builder: (context, snapshot) {
-            return ListView.builder(
-              itemBuilder: (ctx, index) {
-                return PostWidget(snapshot.data![index]);
-              },
-              itemCount: snapshot.data!.length,
-            );
-          }),
+      body: _bodyPostState(),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.cloud_upload),
-        onPressed: _loadListPost,
+        onPressed: () {
+          bloc.loadListPost();
+        },
       ),
     );
   }
 
-  _loadListPost() async {
-    List<Post> list = await bloc.getListPostFuture();
-
-    bloc.addStreamListPostData(list);
+  Widget _bodyPostState() {
+    return StreamBuilder<PostState>(
+      stream: bloc.listenPostState(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) {
+          return Container();
+        }
+        return snapshot.data!.when(
+          initial: () {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+          loading: () {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          },
+          loaded: (list) {
+            return ListView.builder(
+              itemBuilder: (ctx, index) {
+                return PostWidget(
+                  list[index],
+                );
+              },
+              itemCount: list.length,
+            );
+          },
+        );
+      },
+    );
   }
 
   Widget PostWidget(Post post) {
