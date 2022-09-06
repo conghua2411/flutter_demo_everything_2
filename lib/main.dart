@@ -1,21 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo_everything_2/demo_info.dart';
 import 'package:flutter_demo_everything_2/demos.dart';
+import 'package:go_router/go_router.dart';
+
+import 'go_router_demo/routers.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final GoRouterDemo _router = GoRouterDemo();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routeInformationProvider: _router.routeInformationProvider,
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo Everything 2',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Main(),
     );
   }
 }
@@ -57,11 +64,10 @@ class _MainState extends State<Main> {
         child: InkWell(
           borderRadius: BorderRadius.circular(8),
           onTap: () {
-            _openDemo(
-              route: MaterialPageRoute(
-                builder: (ctx) => demo.demo!,
-              ),
-            );
+            context.go('/${demo.name}');
+
+            /// go router, can open stack route
+            // context.go('/AnimationInfo/CircleClose');
           },
           child: Container(
             decoration: BoxDecoration(
@@ -83,9 +89,5 @@ class _MainState extends State<Main> {
         ),
       ),
     );
-  }
-
-  void _openDemo({Route<dynamic>? route}) {
-    Navigator.push(context, route!);
   }
 }
