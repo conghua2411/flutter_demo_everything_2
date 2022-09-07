@@ -1,15 +1,10 @@
 ---
 name: Issue
-about: Issue specific
+about: File an issue
 title: ''
 labels: ''
 assignees: ''
 
----
-
----
-name: Issue
-about: File an issue
 ---
 ## Who
 Work:
