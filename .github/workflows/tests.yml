@@ -23,9 +23,6 @@ jobs:
 
       - run: flutter pub run build_runner build
 
-      - name: Analyze
-        run: flutter analyze
-
       - name: Run tests
         run: flutter test --coverage
 
