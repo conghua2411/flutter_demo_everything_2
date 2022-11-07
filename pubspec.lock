@@ -196,14 +196,42 @@ packages:
       name: device_info_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "7.0.1"
+    version: "6.0.0"
+  device_info_plus_linux:
+    dependency: transitive
+    description:
+      name: device_info_plus_linux
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
+  device_info_plus_macos:
+    dependency: transitive
+    description:
+      name: device_info_plus_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
   device_info_plus_platform_interface:
     dependency: transitive
     description:
       name: device_info_plus_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.1"
+    version: "5.0.0"
+  device_info_plus_web:
+    dependency: transitive
+    description:
+      name: device_info_plus_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
+  device_info_plus_windows:
+    dependency: transitive
+    description:
+      name: device_info_plus_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "6.0.0"
   diff_match_patch:
     dependency: transitive
     description:
@@ -323,7 +351,7 @@ packages:
       name: go_router
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.1.1"
+    version: "5.1.5"
   google_maps_flutter:
     dependency: "direct main"
     description:
