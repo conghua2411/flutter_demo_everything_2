@@ -10,7 +10,6 @@ class DartzDemoInfo extends StatefulWidget {
 }
 
 class _DartzDemoInfoState extends State<DartzDemoInfo> {
-
   late DartzLogic logic;
 
   @override
@@ -32,25 +31,19 @@ class _DartzDemoInfoState extends State<DartzDemoInfo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             FutureBuilder<Dartz.Either<Exception, String>>(
-              initialData: Dartz.right(''),
-              future: logic.getUserName(),
-              builder: (context, snapshot) {
-                return userInfoWidget(
-                  title: 'Username',
-                  value: snapshot.data!
-                );
-              }
-            ),
+                initialData: Dartz.right(''),
+                future: logic.getUserName(),
+                builder: (context, snapshot) {
+                  return userInfoWidget(
+                      title: 'Username', value: snapshot.data!);
+                }),
             FutureBuilder<Dartz.Either<Exception, String>>(
                 initialData: Dartz.right(''),
                 future: logic.getPhoneNumber(),
                 builder: (context, snapshot) {
                   return userInfoWidget(
-                      title: 'Phone number',
-                      value: snapshot.data!
-                  );
-                }
-            ),
+                      title: 'Phone number', value: snapshot.data!);
+                }),
           ],
         ),
       ),

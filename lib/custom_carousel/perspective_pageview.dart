@@ -12,7 +12,11 @@ class PerspectivePageView extends StatefulWidget {
   final Color? shadowColor;
   final PVAspectRatio? aspectRatio;
 
-  PerspectivePageView({@required this.children, @required this.hasShadow, this.shadowColor,this.aspectRatio});
+  PerspectivePageView(
+      {@required this.children,
+      @required this.hasShadow,
+      this.shadowColor,
+      this.aspectRatio});
 
   @override
   _PerspectivePageViewState createState() => _PerspectivePageViewState();
@@ -23,14 +27,14 @@ class _PerspectivePageViewState extends State<PerspectivePageView> {
   double fraction = 0.50;
   PageController? _controller;
 
-  List<double> getAspectRatio(){
-    switch(widget.aspectRatio){
+  List<double> getAspectRatio() {
+    switch (widget.aspectRatio) {
       case PVAspectRatio.ONE_ONE:
-        return [1.0,1.6];
+        return [1.0, 1.6];
       case PVAspectRatio.SIXTEEN_NINE:
-        return [16/9,1.1];
+        return [16 / 9, 1.1];
       default:
-        return [1.0,1.6];
+        return [1.0, 1.6];
     }
   }
 
@@ -64,7 +68,7 @@ class _PerspectivePageViewState extends State<PerspectivePageView> {
                       fraction: fraction,
                       hasShadow: widget.hasShadow!,
                       shadowColor: widget.shadowColor!,
-                      shadowScale:arAndShadow[1]);
+                      shadowScale: arAndShadow[1]);
                 }),
           ),
         ),
@@ -81,7 +85,13 @@ class MyPage extends StatelessWidget {
   final bool? hasShadow;
   final double? shadowScale;
 
-  MyPage({this.child, this.number, this.fraction, this.hasShadow, this.shadowColor,this.shadowScale});
+  MyPage(
+      {this.child,
+      this.number,
+      this.fraction,
+      this.hasShadow,
+      this.shadowColor,
+      this.shadowScale});
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +122,10 @@ class MyPage extends StatelessWidget {
               transform: shadowMatrix,
               child: Container(
                 decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(color: shadowColor??Colors.black12, blurRadius: 10.0, spreadRadius: 1.0)
+                  BoxShadow(
+                      color: shadowColor ?? Colors.black12,
+                      blurRadius: 10.0,
+                      spreadRadius: 1.0)
                 ]),
               ),
             ),

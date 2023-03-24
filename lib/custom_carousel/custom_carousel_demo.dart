@@ -126,7 +126,6 @@ class _CustomCarouselDemoState extends State<CustomCarouselDemo> {
               ),
             ),
           ],
-
         ),
       ),
     );
