@@ -44,7 +44,7 @@ dependencies:
   go_router: ^6.2.0
 
   google_maps_flutter: ^2.2.1
-  dio: ^4.0.6
+  dio: ^5.0.3
 
 dev_dependencies:
   flutter_test:
