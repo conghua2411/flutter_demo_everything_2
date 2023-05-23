@@ -1,7 +1,6 @@
 import 'package:flutter_demo_everything_2/sceen_life_cycle/screen_life_cycle_demo_info.dart';
 
 import 'animation/animation_info.dart';
-import 'custom_carousel/custom_carousel_demo_info.dart';
 import 'dartz_demo/dartz_demo_info.dart';
 import 'dio_demo/dio_demo_info.dart';
 import 'expansion_tree_demo/expansion_tree_demo_info.dart';
@@ -17,7 +16,6 @@ var demos = [
   steamCardImageDemoInfo,
   flowableWidgetDemoInfo,
   expansionTreeDemoInfo,
-  customCarouselDemo,
   animationInfo,
   hookDemoInfo,
   flutterBlocDemoInfo,
