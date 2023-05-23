@@ -16,7 +16,6 @@ var demos = [
   steamCardImageDemoInfo,
   flowableWidgetDemoInfo,
   expansionTreeDemoInfo,
-  customCarouselDemo,
   animationInfo,
   hookDemoInfo,
   flutterBlocDemoInfo,
