@@ -26,8 +26,9 @@ class HookDemo extends HookWidget {
                   builder: (ctx, child) {
                     return Container(
                       decoration: BoxDecoration(
-                        borderRadius:
-                            BorderRadius.circular(24 * _animation.value),
+                        borderRadius: BorderRadius.circular(
+                          24 * _animation.value,
+                        ),
                         border: Border.all(
                           color: Colors.blue,
                           width: _animation.value * 2,
