@@ -13,9 +13,9 @@ class _ExpansionTreeDemoState extends State<ExpansionTreeDemo> {
         child: Column(
           children: [
             ExpansionPanelList(
-              animationDuration: Duration(milliseconds:1000),
-              dividerColor:Colors.red,
-              elevation:1,
+              animationDuration: Duration(milliseconds: 1000),
+              dividerColor: Colors.red,
+              elevation: 1,
               children: [
                 ExpansionPanel(
                   headerBuilder: (ctx, isOpen) {
