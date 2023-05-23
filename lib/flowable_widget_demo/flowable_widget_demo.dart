@@ -115,7 +115,7 @@ class _FlowableWidgetState extends State<FlowableWidget>
   void checkPosition(double x, double y) {
     startX = x;
 
-    if (x + (widget.size/2) < widget.parentWidth / 2) {
+    if (x + (widget.size / 2) < widget.parentWidth / 2) {
       endX = widget.padding;
     } else {
       endX = widget.parentWidth - widget.padding - widget.size;
@@ -129,7 +129,7 @@ class _FlowableWidgetState extends State<FlowableWidget>
       endY = widget.padding;
     }
 
-    if (y + widget.size > widget.parentHeight - widget.padding)  {
+    if (y + widget.size > widget.parentHeight - widget.padding) {
       endY = widget.parentHeight - widget.padding - widget.size;
     }
 

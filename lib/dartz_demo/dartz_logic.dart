@@ -6,6 +6,7 @@ class DartzLogic {
   }
 
   Future<Either<Exception, String>> getPhoneNumber() {
-    return Future.delayed(Duration(seconds: 3), () => Left(Exception('cannot get phone number')));
+    return Future.delayed(
+        Duration(seconds: 3), () => Left(Exception('cannot get phone number')));
   }
 }
