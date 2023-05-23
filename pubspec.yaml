@@ -35,7 +35,7 @@ dependencies:
   dartz: ^0.10.1
 
   freezed_annotation: ^2.0.3
-  json_annotation: ^4.8.0
+  json_annotation: ^4.8.1
 
   flutter_compass: ^0.7.0
   permission_handler: ^10.2.0
