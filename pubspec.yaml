@@ -47,7 +47,7 @@ dependencies:
   dio: ^5.1.2
 
   # Game game game
-  flame: ^1.6.0
+  flame: ^1.8.0
 
 dev_dependencies:
   flutter_test:
