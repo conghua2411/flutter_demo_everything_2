@@ -9,7 +9,7 @@ import 'package:flame/game.dart';
 int score = 0;
 bool pause = false;
 
-class ShootingDuck extends FlameGame with HasTappables {
+class ShootingDuck extends FlameGame {
   List<Duck> listDucks = [];
   int _maxDuck = 10;
 
@@ -93,7 +93,7 @@ class ShootingDuck extends FlameGame with HasTappables {
 }
 
 class Duck<T extends FlameGame> extends SpriteAnimationComponent
-    with HasGameRef<T>, Tappable {
+    with HasGameRef<T>, TapCallbacks {
   bool _visible = true;
 
   bool get visible => _visible;
@@ -149,7 +149,7 @@ class Duck<T extends FlameGame> extends SpriteAnimationComponent
   }
 
   @override
-  bool onTapDown(TapDownInfo info) {
+  bool onTapDown(TapDownEvent event) {
     if (pause) {
       return true;
     }
