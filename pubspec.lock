@@ -372,10 +372,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "00d1b67d6e9fa443331da229084dd3eb04407f5a2dff22940bd7bba6af5722c3"
+      sha256: b33a88c67816312597e5e0f5906c5139a0b9bd9bb137346e872c788da7af8ea0
       url: "https://pub.dev"
     source: hosted
-    version: "7.1.1"
+    version: "9.0.3"
   google_maps:
     dependency: transitive
     description:
