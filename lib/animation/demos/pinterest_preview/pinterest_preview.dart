@@ -26,9 +26,19 @@ class _PinterestPreviewState extends State<PinterestPreview> {
 
   final _random = Random();
 
-  String _getRandomImage() {
+  (String, String, String) _random3DifferenceImage() {
     int index = _random.nextInt(images.length);
-    return images[index];
+    int index2 = _random.nextInt(images.length);
+    do {
+      index2 = _random.nextInt(images.length);
+    } while (index == index2);
+
+    int index3 = _random.nextInt(images.length);
+    do {
+      index3 = _random.nextInt(images.length);
+    } while (index3 == index || index3 == index2);
+
+    return (images[index], images[index2], images[index3]);
   }
 
   @override
@@ -39,11 +49,13 @@ class _PinterestPreviewState extends State<PinterestPreview> {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
+          var (image, image2, image3) = _random3DifferenceImage();
+
           return PinterestItemPreview(
             dpo: PinterestItemDpo(
-              first: _getRandomImage(),
-              second: _getRandomImage(),
-              third: _getRandomImage(),
+              first: image,
+              second: image2,
+              third: image3,
               name: 'Character',
             ),
           );
