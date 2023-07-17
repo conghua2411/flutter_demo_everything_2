@@ -10,6 +10,7 @@ import 'freezed_demo/freezed_demo_info.dart';
 import 'game/game_demo_info.dart';
 import 'hook/hook_info.dart';
 import 'map/map_demo_info.dart';
+import 'neumorphism/neumorphism_demo_info.dart';
 import 'steam_card_image/steam_card_image_demo_info.dart';
 
 var demos = [
@@ -25,4 +26,5 @@ var demos = [
   mapDemoInfo,
   dioDemoInfo,
   gameDemoInfo,
+  neumorphismDemo,
 ];
