@@ -49,28 +49,31 @@ class _FreezedDemoState extends State<FreezedDemo> {
         if (!snapshot.hasData) {
           return Container();
         }
-        return snapshot.data!.when(
-          initial: () {
-            return Center(
+
+        return switch (snapshot.data!) {
+          Initial() => Center(
               child: CircularProgressIndicator(),
-            );
-          },
-          loading: () {
-            return Center(
+            ),
+          Loading() => Center(
               child: CircularProgressIndicator(),
-            );
-          },
-          loaded: (list) {
-            return ListView.builder(
+            ),
+          Loaded(list: var list) when list.isNotEmpty && list[0].id == 0 =>
+            ListView.builder(
               itemBuilder: (ctx, index) {
                 return PostWidget(
                   list[index],
                 );
               },
               itemCount: list.length,
-            );
-          },
-        );
+            ),
+          Loaded(list: var list) when list.isNotEmpty && list[0].id != 0 =>
+            Center(
+              child: Text('List not start with 0'),
+            ),
+          Loaded() => Center(
+              child: Text('No items'),
+            ),
+        };
       },
     );
   }
