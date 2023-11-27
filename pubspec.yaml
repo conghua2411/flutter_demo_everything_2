@@ -44,7 +44,7 @@ dependencies:
   go_router: ^10.1.2
 
   google_maps_flutter: ^2.4.0
-  dio: ^5.3.2
+  dio: ^5.3.4
 
   # Game game game
   flame: ^1.8.2
